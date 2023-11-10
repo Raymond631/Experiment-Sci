@@ -110,7 +110,7 @@ if __name__ == "__main__":
 
     ids = np.arange(1, len(answer) + 1).reshape(-1, 1)
     data_with_ids = np.concatenate((ids, answer), axis=1)
-    with open("../data/predict.csv", 'w', newline='') as csvfile:
+    with open("../result/predict.csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         # 写入表头
         csv_writer.writerow(['id', 'label'])
