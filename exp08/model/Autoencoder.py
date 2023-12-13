@@ -99,7 +99,7 @@ def autoencoder3():
     X_test_noisy = np.clip(X_test_noisy, 0., 1.)
 
     # 输入图片形状
-    input_img = Input(shape=(784,))
+    input_img = Input(shape=(28, 28, 1))
     # 编码器
     x = Conv2D(32, (3, 3), activation='relu', padding='same')(input_img)
     x = MaxPooling2D((2, 2), padding='same')(x)
