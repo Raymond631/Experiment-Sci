@@ -22,14 +22,13 @@ def lstm():
     model.add(Embedding(max_features, 32))
     model.add(LSTM(32))
     model.add(Dense(1, activation='sigmoid'))
-
+    model.summary()
+    # compile the models
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     # Train the model
     history = model.fit(X_train, y_train, epochs=10, batch_size=128, validation_split=0.2)
     # Plot training history
     plot_history(history)
-
-    model.summary()
 
 
 def plot_history(history):
@@ -45,7 +44,7 @@ def plot_history(history):
     plt.title('Training and validation accuracy')
     plt.legend()
     plt.savefig('../result/LSTM_RNN_accuracy.png')
-    
+
     plt.figure()
     plt.plot(epochs, loss, 'bo', label='Training loss')
     plt.plot(epochs, val_loss, 'b', label='Validation loss')

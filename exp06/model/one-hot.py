@@ -25,6 +25,8 @@ def word_one_hot(samples):
             # 唯一的元素为1
             results[i, j, index] = 1
     # 查看索引字典和样本列表的第二个元素的第二个单词的编码情况
+    print("单词级one-hot编码------------------------------------------->")
+    print(token_index)
     print(results[1, 1])
 
 
@@ -46,7 +48,18 @@ def char_one_hot(samples):
             results[i, j, index] = 1
 
     # 查看索引字典和样本列表的第三个元素的第三个单词的编码情况
+    print("字符级one-hot编码------------------------------------------->")
+    print(token_index)
     print(results[2, 2])
+
+
+# 用keras实现单词级的one-hot编码
+def kera_one_hot(samples):
+    tokenizer = Tokenizer(num_words=1000)
+    tokenizer.fit_on_texts(samples)
+    word_index = tokenizer.word_index
+    print("keras实现单词级one-hot编码------------------------------------------->")
+    print(word_index)
 
 
 if __name__ == '__main__':
@@ -56,9 +69,4 @@ if __name__ == '__main__':
                'a panda is sleeping']
     word_one_hot(samples)
     char_one_hot(samples)
-
-    # 用keras实现单词级的one-hot编码
-    tokenizer = Tokenizer(num_words=1000)
-    tokenizer.fit_on_texts(samples)
-    word_index = tokenizer.word_index
-    print(word_index)
+    kera_one_hot(samples)
