@@ -149,8 +149,8 @@ def draw(X_test, decoded_imgs):
 
 if __name__ == '__main__':
     print("自编码器-------------------------------->")
-    # autoencoder1()
+    autoencoder1()
     print("卷积自编码器----------------------------->")
     autoencoder2()
     print("去噪自编码器----------------------------->")
-    # autoencoder3()
+    autoencoder3()
