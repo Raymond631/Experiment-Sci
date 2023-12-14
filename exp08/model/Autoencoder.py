@@ -118,7 +118,7 @@ def autoencoder3():
     # 编译模型
     autoencoder.compile(optimizer='adam', loss='binary_crossentropy')
     # 训练模型
-    autoencoder.fit(X_train_noisy, X_train, epochs=10, batch_size=128, shuffle=True, validation_data=(X_test_noisy, X_test))
+    autoencoder.fit(X_train_noisy, X_train, epochs=100, batch_size=128, shuffle=True, validation_data=(X_test_noisy, X_test))
 
     # 预测
     decoded_imgs = autoencoder.predict(X_test)
